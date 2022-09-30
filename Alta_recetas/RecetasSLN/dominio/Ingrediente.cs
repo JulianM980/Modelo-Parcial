@@ -12,18 +12,11 @@ namespace RecetasSLN.dominio
         public string nombre { get; set; }
         public string unidad { get; set; }
 
-        public Ingrediente()
+        public Ingrediente(int IngredienteId,string Nombre)
         {
-            ingredienteId = 0;
-            nombre = "";
-            unidad = "";
-        }
-
-        public Ingrediente(int IngredienteId,string Nombre,string Unidad)
-        {
-            this.ingredienteId = IngredienteId;
-            this.nombre = Nombre;
-            this.unidad = Unidad;
+            ingredienteId = IngredienteId;
+            nombre = Nombre;
+            this.unidad = unidad;
         }
     }
 }

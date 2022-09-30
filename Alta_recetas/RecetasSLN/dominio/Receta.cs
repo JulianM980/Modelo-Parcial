@@ -19,7 +19,7 @@ namespace RecetasSLN.dominio
             recetaNro = 0;
             nombre = "";
             tipoReceta = 0;
-            chef = "";
+            cheff= "";
             detalleReceta = new List<DetalleReceta>();
         }
         public Receta(int RecetaNro, string Nombre, int TipoReceta,string Chef, List<DetalleReceta> DetalleReceta)
@@ -27,7 +27,7 @@ namespace RecetasSLN.dominio
             this.recetaNro = RecetaNro;
             this.nombre = Nombre;
             this.tipoReceta = TipoReceta;
-            this.chef = Chef;
+            this.cheff = Chef;
             this.detalleReceta = DetalleReceta;
         }
 

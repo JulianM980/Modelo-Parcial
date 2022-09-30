@@ -34,21 +34,22 @@
             this.lblCheff = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.cboTipo = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetalle = new System.Windows.Forms.DataGridView();
             this.cboIngrediente = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCheff = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalIngredientes = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ingrediente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Acciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRecetas
@@ -57,7 +58,7 @@
             this.lblRecetas.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblRecetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecetas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblRecetas.Location = new System.Drawing.Point(138, 18);
+            this.lblRecetas.Location = new System.Drawing.Point(93, 18);
             this.lblRecetas.Name = "lblRecetas";
             this.lblRecetas.Size = new System.Drawing.Size(87, 20);
             this.lblRecetas.TabIndex = 0;
@@ -113,20 +114,21 @@
             this.cboTipo.Size = new System.Drawing.Size(279, 21);
             this.cboTipo.TabIndex = 5;
             // 
-            // dataGridView1
+            // dgvDetalle
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDetalle.AllowUserToAddRows = false;
+            this.dgvDetalle.AllowUserToDeleteRows = false;
+            this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.Ingrediente,
             this.Cantidad,
             this.Acciones});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 215);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(708, 168);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvDetalle.Location = new System.Drawing.Point(47, 215);
+            this.dgvDetalle.Name = "dgvDetalle";
+            this.dgvDetalle.ReadOnly = true;
+            this.dgvDetalle.Size = new System.Drawing.Size(708, 168);
+            this.dgvDetalle.TabIndex = 6;
             // 
             // cboIngrediente
             // 
@@ -136,12 +138,12 @@
             this.cboIngrediente.Size = new System.Drawing.Size(359, 21);
             this.cboIngrediente.TabIndex = 7;
             // 
-            // numericUpDown1
+            // nudCantidad
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(412, 176);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(214, 20);
-            this.numericUpDown1.TabIndex = 8;
+            this.nudCantidad.Location = new System.Drawing.Point(412, 176);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(214, 20);
+            this.nudCantidad.TabIndex = 8;
             // 
             // btnAgregar
             // 
@@ -151,20 +153,21 @@
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(529, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtNombre.Location = new System.Drawing.Point(97, 52);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(529, 20);
+            this.txtNombre.TabIndex = 10;
             // 
-            // textBox2
+            // txtCheff
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(529, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtCheff.Location = new System.Drawing.Point(97, 88);
+            this.txtCheff.Name = "txtCheff";
+            this.txtCheff.Size = new System.Drawing.Size(529, 20);
+            this.txtCheff.TabIndex = 11;
             // 
             // lblTotal
             // 
@@ -204,6 +207,13 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
             // Ingrediente
             // 
             this.Ingrediente.HeaderText = "Ingrediente";
@@ -231,12 +241,12 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblTotalIngredientes);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCheff);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.cboIngrediente);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblCheff);
@@ -246,8 +256,8 @@
             this.Name = "FrmAltaReceta";
             this.Text = "FrmAltaReceta";
             this.Load += new System.EventHandler(this.FrmAltaReceta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,16 +271,17 @@
         private System.Windows.Forms.Label lblCheff;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.ComboBox cboTipo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDetalle;
         private System.Windows.Forms.ComboBox cboIngrediente;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCheff;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalIngredientes;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ingrediente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Acciones;

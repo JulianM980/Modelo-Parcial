@@ -11,6 +11,11 @@ namespace RecetasSLN.dominio
         public Ingrediente ingrediente { get; set; }
         public double cantidad  { get; set; }
 
+        public DetalleReceta(Ingrediente I, int cant)
+        {
+            ingrediente = I;
+            cantidad = cant;
+        }
         
     }
 }
