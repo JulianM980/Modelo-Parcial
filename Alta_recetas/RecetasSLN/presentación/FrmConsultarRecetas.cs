@@ -16,5 +16,10 @@ namespace RecetasSLN.presentación
         {
             InitializeComponent();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            new FrmAltaReceta().ShowDialog();
+        }
     }
 }

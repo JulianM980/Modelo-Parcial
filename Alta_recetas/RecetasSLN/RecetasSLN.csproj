@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="datos\AccesoDB.cs" />
+    <Compile Include="datos\Parametro.cs" />
     <Compile Include="dominio\DetalleReceta.cs" />
     <Compile Include="dominio\Ingrediente.cs" />
     <Compile Include="dominio\Receta.cs" />

@@ -8,5 +8,9 @@ namespace RecetasSLN.dominio
 {
     internal class DetalleReceta
     {
+        public Ingrediente ingrediente { get; set; }
+        public double cantidad  { get; set; }
+
+        
     }
 }

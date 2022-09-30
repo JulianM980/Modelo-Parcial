@@ -184,6 +184,7 @@ namespace RecetasSLN.presentación
             this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "Nueva Receta";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // FrmConsultarRecetas
             // 

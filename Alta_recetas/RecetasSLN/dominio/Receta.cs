@@ -10,19 +10,19 @@ namespace RecetasSLN.dominio
     {
         public int recetaNro { get; set; }
         public string nombre { get; set; }
-        public string tipoReceta { get; set; }
-        public string chef { get; set; }
+        public int tipoReceta { get; set; }
+        public string cheff { get; set; }
         public List<DetalleReceta> detalleReceta = new List<DetalleReceta>();
 
         public Receta()
         {
             recetaNro = 0;
             nombre = "";
-            tipoReceta = "";
+            tipoReceta = 0;
             chef = "";
             detalleReceta = new List<DetalleReceta>();
         }
-        public Receta(int RecetaNro, string Nombre, string TipoReceta,string Chef, List<DetalleReceta> DetalleReceta)
+        public Receta(int RecetaNro, string Nombre, int TipoReceta,string Chef, List<DetalleReceta> DetalleReceta)
         {
             this.recetaNro = RecetaNro;
             this.nombre = Nombre;
@@ -34,6 +34,11 @@ namespace RecetasSLN.dominio
         public void AgregarDetalle(DetalleReceta detalle)
         {
             detalleReceta.Add(detalle);
+        }
+
+        public void QuitarDetalle(int posicion)
+        {
+            detalleReceta.RemoveAt(posicion);
         }
     }
 }
